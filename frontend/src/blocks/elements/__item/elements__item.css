@@ -1,0 +1,8 @@
+.elements__item {
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 282px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}

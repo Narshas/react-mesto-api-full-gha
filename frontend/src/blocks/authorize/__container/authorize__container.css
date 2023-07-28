@@ -1,0 +1,14 @@
+.authorize__container {
+    padding: 60px 0 0;
+
+    
+}
+
+@media screen and (max-width: 360px) {
+    .authorize__container {
+        padding: 40px 0 40px;
+
+        /* max-width: 260px;
+        margin: 40px auto; */
+    }
+}

@@ -1,0 +1,20 @@
+.authorize__title {
+    padding: 0;
+    margin: 0 0 50px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    text-align: center;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #FFFFFF;
+
+
+}
+
+@media screen and (max-width: 360px) {
+    .authorize__title {
+        margin: 0 0 40px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,35 @@
+.popup__input-error {
+    font-size: 12px;
+    line-height: 1;
+    /* по заданию 1.25/15px, но фактически в макете заверстано 1.0/12px — 
+    подробности читать здесь https://app.pachca.com/chats?thread_id=329327 */
+    color: #FF0000;
+    font-weight: 400;
+
+    margin: 5px 0 0;
+    padding: 0;
+    min-height: 25px;
+    display: flex;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    /* position: absolute;
+    top: calc(100% + 5px);
+    left: 0; */
+    /* position: absolute;
+    width: 164px;
+    height: 12px;
+    left: 110px;
+    top: 500px;*/
+}
+
+.popup__input-error:last-of-type {
+    margin: 5px 0 19px;
+}
+
+@media screen and (max-width: 618px) {
+    .popup__input-error:last-of-type {
+        margin: 0 0 16px;
+    }
+}

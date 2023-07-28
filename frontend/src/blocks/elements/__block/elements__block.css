@@ -1,0 +1,7 @@
+.elements__block {
+    display: flex;
+    justify-content: space-between;
+    width: 246px;
+    margin: 21px 15px 25px 21px;
+    align-items: center;
+}

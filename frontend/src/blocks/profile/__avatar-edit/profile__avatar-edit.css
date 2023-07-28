@@ -1,0 +1,19 @@
+.profile__avatar-edit {
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 47px;
+    left: 47px;
+}
+
+
+
+/* display: none;
+    z-index: 1;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 47px;
+    left: 47px;
+    pointer-events: none; */

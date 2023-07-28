@@ -1,0 +1,27 @@
+.authorize__submit {
+    padding: 14px 0;
+    margin: 216px 0 0;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    width: 358px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.87px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.authorize__submit:hover {
+    opacity: 0.85;
+    cursor: pointer; 
+}
+
+@media screen and (max-width: 360px) {
+    .authorize__submit {
+        width: 260px;
+        height: 46px;
+    }
+}

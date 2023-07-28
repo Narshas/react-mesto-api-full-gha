@@ -1,0 +1,14 @@
+.authorize__image {
+    padding: 0;
+    margin: 26px auto 32px;
+    width: 120px;
+    height: 120px;
+    display: block
+}
+
+@media screen and (max-width: 360px) {
+    .authorize__image {
+        margin: 25px auto 40px;
+        
+    }
+}
