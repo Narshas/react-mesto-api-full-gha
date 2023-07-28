@@ -11,7 +11,7 @@ const { errors } = require('celebrate');
 const error = require('./middlewares/error');
 const router = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { cors } = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 
