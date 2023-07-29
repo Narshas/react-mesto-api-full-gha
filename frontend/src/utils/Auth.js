@@ -40,4 +40,4 @@ class Auth {
     }
 }
 
-export const auth = new Auth('https://auth.nomoreparties.co');
+export const auth = new Auth('https://api.narshas.students.nomoredomains.sbs');
