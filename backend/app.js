@@ -22,8 +22,7 @@ app.use(requestLogger);
 app.use(cors);
 app.use(helmet());
 app.use(cookieParser());
-mongoose.connect('mongodb://localhost:27017/mestodb', { family: 4 });
-
+mongoose.connect('mongodb://localhost:27017/mestodb', { family: 4, useNewUrlParser: true, useUnifiedTopology: true });
 app.use(router);
 app.use(errorLogger);
 app.use(errors());
