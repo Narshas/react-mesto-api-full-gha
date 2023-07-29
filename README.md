@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 62.84.117.207
+IP 62.84.117.207
 
 Frontend https://narshas.students.nomoreparties.sbs
 
