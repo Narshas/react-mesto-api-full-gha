@@ -175,7 +175,7 @@ export function App() {
       .then(() => {
         setInfoTooltipOpen(true);
         setIsError(false);
-        navigate('/sign-in', { replace: true });
+        navigate('/signin', { replace: true });
       })
       .catch((err) => {
         console.log(`we've got a problem: ${err}`);
@@ -189,7 +189,7 @@ export function App() {
     localStorage.removeItem('token');
     setLoggedIn(false);
     setEmail('');
-    navigate('/sign-in', {replace: true});
+    navigate('/signin', {replace: true});
   }
 
   const handleOverlayClick = (e) => {
@@ -288,9 +288,9 @@ export function App() {
             </>
           }/>
 
-          <Route path="/sign-in" element={<Login handleLogin={handleLogin} />} />
+          <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
             
-          <Route path ="/sign-up" element={<Register handleRegister={handleRegister} />} />
+          <Route path ="/signup" element={<Register handleRegister={handleRegister} />} />
           
         </Routes>
         <InfoTooltip

@@ -41,7 +41,7 @@ export function Register (props) {
         
                 <div className="authorize__side-block">
                     <p className="authorize__side-text">Уже зарегистрированы?
-                        <Link className="authorize__side-link" to="/sign-in"> Войти</Link>
+                        <Link className="authorize__side-link" to="/signin"> Войти</Link>
                     </p>                        
                 </div>
             </div>
