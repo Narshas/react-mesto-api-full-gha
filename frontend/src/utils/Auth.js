@@ -32,6 +32,7 @@ class Auth {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'GET',
             headers: {
+                "Accept": "application/json",
                 "Content-Type": "application/json",
                 "Authorization" : `Bearer ${currentToken}`
             },
@@ -40,4 +41,6 @@ class Auth {
     }
 }
 
-export const auth = new Auth('https://api.narshas.students.nomoredomains.sbs');
+// export const auth = new Auth('https://api.narshas.students.nomoredomains.sbs');
+export const auth = new Auth('http://localhost:3001');
+// export const auth = new Auth('https://auth.nomoreparties.co');

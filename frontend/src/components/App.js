@@ -18,6 +18,7 @@ import { Login } from "./Login";
 import { Register } from "./Register";
 import { auth } from "../utils/Auth";
 import { InfoTooltip } from "./InfoTooltip";
+import { Api } from "../utils/Api";
 
 
 
@@ -57,7 +58,7 @@ export function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
     
     api.changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
@@ -152,6 +153,17 @@ export function App() {
   //=================
   const navigate = useNavigate();
 
+  const api = new Api({
+    //baseUrl: 'https://api.narshas.students.nomoredomains.sbs',
+    baseUrl: 'http://localhost:3001',
+    //baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
+    headers: {
+        //authorization: '6891c063-8435-431b-87d5-a0d9903b0e56',
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+    }
+})
+
   const handleLogin = ({password, email}) => {
     auth.authorizer({password, email})
       .then((res) => {
@@ -175,7 +187,7 @@ export function App() {
       .then(() => {
         setInfoTooltipOpen(true);
         setIsError(false);
-        navigate('/signin', { replace: true });
+        navigate('/sign-in', { replace: true });
       })
       .catch((err) => {
         console.log(`we've got a problem: ${err}`);
@@ -189,7 +201,7 @@ export function App() {
     localStorage.removeItem('token');
     setLoggedIn(false);
     setEmail('');
-    navigate('/signin', {replace: true});
+    navigate('/sign-in', {replace: true});
   }
 
   const handleOverlayClick = (e) => {
@@ -207,7 +219,8 @@ export function App() {
       auth.tokenCheck(currentToken)
         .then((res) => {
           setLoggedIn(true);
-          setEmail(res.data.email);
+          setEmail(res.email);
+          //setEmail(res.data.email);
           navigate("/", {replace: true});
         })
         .catch((err) => {
@@ -288,9 +301,9 @@ export function App() {
             </>
           }/>
 
-          <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
+          <Route path="/sign-in" element={<Login handleLogin={handleLogin} />} />
             
-          <Route path ="/signup" element={<Register handleRegister={handleRegister} />} />
+          <Route path ="/sign-up" element={<Register handleRegister={handleRegister} />} />
           
         </Routes>
         <InfoTooltip

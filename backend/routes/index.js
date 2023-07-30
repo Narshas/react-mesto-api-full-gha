@@ -23,7 +23,7 @@ router.post(
       password: Joi.string().required(),
       name: Joi.string().min(2).max(30).optional(),
       about: Joi.string().min(2).max(30).optional(),
-      avatar: Joi.string().optional().pattern(/(https)?:\/\/(www\.)?[a-z0-9\-._~:/?#[\]@!$&'()*+,;=]{2,}\.[a-z0-9/#?]{2,}$/),
+      avatar: Joi.string().optional().pattern(/(https)?:\/\/(www\.)?[a-z0-9\-._~:/?#[\]@!$&'()*+,;=]{2,}\.[a-z0-9/#?]{2,}/),
     }),
   }),
   createUser,

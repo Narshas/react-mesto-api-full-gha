@@ -48,6 +48,7 @@ const putLike = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
+    // .populate(['likes', 'owner'])
     .then((card) => {
       if (!card) {
         throw new NotFoundError('we dont have it');

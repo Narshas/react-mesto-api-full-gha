@@ -1,4 +1,4 @@
-class Api {
+export class Api {
     constructor(settings) {
         this._baseUrl = settings.baseUrl;
         this._headers = settings.headers;
@@ -81,11 +81,5 @@ class Api {
     }
 }
 
-export const api = new Api({
-    baseUrl: 'https://api.narshas.students.nomoredomains.sbs',
-    headers: {
-        authorization: '6891c063-8435-431b-87d5-a0d9903b0e56',
-        'Content-Type': 'application/json'
-    }
-})
+
 

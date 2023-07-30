@@ -14,8 +14,8 @@ export function Header(props) {
                             <button className="header__logout" type="button" onClick={props.handleLogout}>Выйти</button>
                         </div>
                     )} />
-                    <Route path='/signin' element={(<><Link className='header__user-item' to='/signup'>Регистрация</Link></>)}/>
-                    <Route path='/signup' element={(<><Link className='header__user-item' to='/signin'>Войти</Link></>)}/>
+                    <Route path='/sign-in' element={(<><Link className='header__user-item' to='/sign-up'>Регистрация</Link></>)}/>
+                    <Route path='/sign-up' element={(<><Link className='header__user-item' to='/sign-in'>Войти</Link></>)}/>
                 </Routes>
             </div>
         </header>
