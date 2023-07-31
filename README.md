@@ -6,11 +6,11 @@
 
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/Narshas/react-mesto-api-full-gha/
+Адрес репозитория: https://github.com/Narshas/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
-IP 62.84.117.207
+IP 51.250.14.77
 
 Frontend https://narshas.students.nomoreparties.sbs
 
