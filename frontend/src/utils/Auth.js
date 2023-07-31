@@ -42,5 +42,5 @@ class Auth {
 }
 
 // export const auth = new Auth('https://api.narshas.students.nomoredomains.sbs');
-export const auth = new Auth('http://localhost:3000');
+export const auth = new Auth('http://localhost:3001');
 // export const auth = new Auth('https://auth.nomoreparties.co');
