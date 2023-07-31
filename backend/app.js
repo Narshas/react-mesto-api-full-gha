@@ -13,7 +13,7 @@ const { errors } = require('celebrate');
 const error = require('./middlewares/error');
 const router = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-// const cors = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 
 // const { PORT = 3001 } = process.env;
 const { PORT = 3001 } = process.env;
@@ -22,7 +22,7 @@ const app = express();
 app.use(express.json());
 
 app.use(requestLogger);
-// app.use(cors);
+app.use(cors);
 app.use(helmet());
 // app.use(cookieParser());
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', { family: 4, useNewUrlParser: true, useUnifiedTopology: true });
