@@ -12,18 +12,25 @@ export class Api {
     }
 
     getUserInfo() {
-        return fetch(`${this._baseUrl}/users/me`, { headers: this._headers })
+        return fetch(`${this._baseUrl}/users/me`, { 
+            headers: this._headers, 
+            //credentials: 'include', 
+        })
             .then(res => this._testRes(res))
     }
 
     getDefoltElements() {
-        return fetch(`${this._baseUrl}/cards`, { headers: this._headers })
+        return fetch(`${this._baseUrl}/cards`, { 
+            //credentials: 'include',
+            headers: this._headers
+        })
             .then(res => this._testRes(res))
     }
 
     postNewCard(cardInfo) {
         return fetch(`${this._baseUrl}/cards`, {
             method: 'POST',
+            //credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
                 name: cardInfo.name,
@@ -36,6 +43,7 @@ export class Api {
     deleteCard(cardData) {
         return fetch(`${this._baseUrl}/cards/${cardData._id}`, {
             method: 'DELETE',
+            //credentials: 'include',
             headers: this._headers,
         })
             .then(res => this._testRes(res))
@@ -44,6 +52,7 @@ export class Api {
     patchUserInfo(userData) {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
+             //credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
                 name: userData.name,
@@ -57,12 +66,14 @@ export class Api {
         if (!isLiked) {
             return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
                         method: 'PUT',
+                        //credentials: 'include',
                         headers: this._headers
                     })
                         .then(res => this._testRes(res))
         } else {
             return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
                         method: 'DELETE',
+                        //credentials: 'include',
                         headers: this._headers
                     })
                         .then(res => this._testRes(res))
@@ -72,6 +83,7 @@ export class Api {
     patchAvatar(avatarData) {
         return fetch(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
+            //credentials: 'include',
             headers: this._headers,
             body: JSON.stringify({
                 avatar: avatarData.avatar

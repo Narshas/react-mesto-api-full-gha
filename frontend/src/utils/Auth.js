@@ -13,6 +13,7 @@ class Auth {
     register({ password, email }) {
         return fetch(`${this._baseUrl}/signup`, { 
             method: 'POST',
+            //credentials: 'include',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({password, email})
         })
@@ -22,6 +23,7 @@ class Auth {
     authorizer({ password, email }) {
         return fetch(`${this._baseUrl}/signin`, { 
             method: 'POST',
+            //credentials: 'include',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({password, email})
         })
@@ -31,6 +33,7 @@ class Auth {
     tokenCheck(currentToken) {
         return fetch(`${this._baseUrl}/users/me`, {
             method: 'GET',
+            //credentials: 'include',
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
@@ -42,5 +45,5 @@ class Auth {
 }
 
 export const auth = new Auth('https://api.narshas.students.nomoredomains.sbs');
-// export const auth = new Auth('http://localhost:3001');
+// export const auth = new Auth('http://localhost:3000');
 // export const auth = new Auth('https://auth.nomoreparties.co');
