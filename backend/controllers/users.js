@@ -31,7 +31,13 @@ const getUserById = (req, res, next) => {
       }
       res.status(OK).send(user);
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError('data is incorrect'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 const createUser = (req, res, next) => {
@@ -70,7 +76,6 @@ const login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       // res.status(OK).send({ _id: token });
       res.status(OK).send({ token });
-      console.log(token);
       // res.cookie('jwt', token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 });
     })
     // .catch(() => {

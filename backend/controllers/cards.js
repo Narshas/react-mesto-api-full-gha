@@ -22,8 +22,9 @@ const createCard = (req, res, next) => {
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(BadRequestError('data is incorrect'));
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
 
@@ -39,7 +40,13 @@ const deleteCard = (req, res, next) => {
       return card.deleteOne()
         .then(() => res.status(OK).send({ message: 'card deleted' }));
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError('incorrect id'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 const putLike = (req, res, next) => {
@@ -48,14 +55,19 @@ const putLike = (req, res, next) => {
     { $addToSet: { likes: req.user._id } },
     { new: true },
   )
-    // .populate(['likes', 'owner'])
     .then((card) => {
       if (!card) {
         throw new NotFoundError('we dont have it');
       }
       res.status(OK).send(card);
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError('data is incorrect'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 const deleteLike = (req, res, next) => {
@@ -70,7 +82,13 @@ const deleteLike = (req, res, next) => {
       }
       res.status(OK).send(card);
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError('data is incorrect'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 module.exports = {
